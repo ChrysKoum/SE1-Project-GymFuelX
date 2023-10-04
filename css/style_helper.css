@@ -2065,7 +2065,7 @@ html.no-csstransitions .home-content__main {
 
 .s-info h3 {
   font-family: "metropolis-regular", sans-serif;
-  font-size: 2rem;
+    font-size: 3.2rem;
   line-height: 1.286;
   color: #26d4bb;
 }
@@ -2092,6 +2092,10 @@ html.no-csstransitions .home-content__main {
 
 .info-block {
   margin-bottom: 4.5rem;
+}
+
+.info-block a:hover{
+  color: #26d4bb;
 }
 
 .info-social {

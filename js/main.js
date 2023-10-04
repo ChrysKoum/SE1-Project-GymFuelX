@@ -1,6 +1,24 @@
 $(window).load(function () {
   $(".preloader").fadeOut("slow");
+  adjustIframeWidth(); // Call the iframe resize function on window load
 });
+
+$(window).resize(adjustIframeWidth); // Adjust iframe width on window resize
+
+function adjustIframeWidth() {
+  var iframe = $(".figma");
+  var viewportWidth = $(window).width();
+
+  if (viewportWidth >= 1000) {
+    iframe.css("width", "1000px");
+  } else if (viewportWidth >= 700) {
+    iframe.css("width", "700px");
+  } else if (viewportWidth >= 500) {
+    iframe.css("width", "500px");
+  } else {
+    iframe.css("width", "100%"); // or any default width for screens smaller than 500px
+  }
+}
 
 /* =Main INIT Function
 -------------------------------------------------------------- */
@@ -12,8 +30,6 @@ function initializeSite() {
 }
 /* END ------------------------------------------------------- */
 
-/* =Document Ready Trigger
--------------------------------------------------------------- */
 $(window).load(function () {
   initializeSite();
   (function () {
@@ -22,7 +38,7 @@ $(window).load(function () {
     }, 0);
   })();
 });
-/* END ------------------------------------------------------- */
+
 /* ===================================================================
  * Count - Main JS
  *
