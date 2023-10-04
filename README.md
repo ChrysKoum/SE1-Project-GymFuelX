@@ -8,7 +8,7 @@
 
 ### A Comprehensive Fitness & Nutrition Management System
 
-### Website: https://chryskoum.github.io/Software-Engineering-I-Project/
+### Project Website: https://chryskoum.github.io/Software-Engineering-I-Project/
 
 GymFuelX, a pioneer in the realm of fitness technology, is a pivotal application catering to fitness enthusiasts globally. With an emphasis on health and innovation, GymFuelX aims to transform the gym-food sector, offering a unique blend of tailored fitness and nutrition plans.
 
@@ -81,5 +81,5 @@ The entire codebase, along with associated files, is available at the [GymFuelX 
 
 ## Author
 
-- Repository - [GymFuelX Project](https://chryskoum.github.io/Software-Engineering-I-Project/)
-- Website - [Chrysostomos Koumides](https://chryskoum.github.io/)
+- Project Website - [GymFuelX Project](https://chryskoum.github.io/Software-Engineering-I-Project/)
+- Personal Website - [Chrysostomos Koumides](https://chryskoum.github.io/)
