@@ -1,0 +1,1662 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GYMFUELX API",
+    "description": "This is GYMFUELX API",
+    "contact": {
+      "name": "Team 27",
+      "email": "info@gymfuelx.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/DIMOSKOMPITSELIDIS/Team27/2.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "tags": [
+    {
+      "name": "exercise-user",
+      "description": "user actions on exercises"
+    },
+    {
+      "name": "user-user",
+      "description": "user actions on his details"
+    },
+    {
+      "name": "recipe-user",
+      "description": "user actions on recipes"
+    },
+    {
+      "name": "report-user",
+      "description": "user actions on reports"
+    },
+    {
+      "name": "dietprogram-user",
+      "description": "user actions on his diet program"
+    },
+    {
+      "name": "gymprogram-user",
+      "description": "user actions on his gym program"
+    },
+    {
+      "name": "report-nutritionist",
+      "description": "nutritionist actions on reports"
+    },
+    {
+      "name": "recipe-nutritionist",
+      "description": "nutritionist actions on recipes"
+    },
+    {
+      "name": "report-trainer",
+      "description": "trainer actions on reports"
+    }
+  ],
+  "paths": {
+    "/user/{userID}/dietprogram": {
+      "get": {
+        "tags": [
+          "dietprogram-user"
+        ],
+        "summary": "Get user's diet program",
+        "description": "<ΛΑ-2>\n  Ο χρήστης πρέπει να μπορεί να λαμβάνει προγράμματα γυμναστικής και πρόγραμμα διατροφής βασισμένα σε προσωπικές πληροφορίες.\n",
+        "operationId": "getDietProgram",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "The user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully received Diet Program",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DietProgram"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Diet Program not found"
+          }
+        }
+      }
+    },
+    "/user/{userID}/gymprogram/{excerciseID}": {
+      "get": {
+        "tags": [
+          "exercise-user"
+        ],
+        "summary": "Get a specific excercise's details",
+        "description": "<ΛΑ-4>\n  Ο χρήστης θα πρέπει να μπορεί να δει πληροφορίες για κάθε άσκηση γυμναστικής \n",
+        "operationId": "getExcercise",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "The user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "excerciseID",
+            "in": "path",
+            "description": "The ID of the excercise",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully received excercise's details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exercise"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program not found"
+          }
+        }
+      }
+    },
+    "/user/{userID}": {
+      "get": {
+        "tags": [
+          "user-user"
+        ],
+        "summary": "Get a user's details",
+        "description": "<ΛΑ-11>\n  Ο χρήστης πρέπει να μπορεί να επεξεργάζεται τις προσωπικές πληροφορίες στο προφίλ του.\n",
+        "operationId": "getUserDetails",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "The user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully received user's details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "user-user"
+        ],
+        "summary": "Edit details to user's profile",
+        "description": "<ΛΑ-11>\n  Ο χρήστης πρέπει να μπορεί να επεξεργάζεται τις προσωπικές πληροφορίες στο προφίλ του.\n",
+        "operationId": "editUserDetails",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "The user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "height",
+            "in": "query",
+            "description": "The user's height",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "weight",
+            "in": "query",
+            "description": "The user's weight",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "meal",
+            "in": "query",
+            "description": "The user's meal preferences",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "allergies",
+            "in": "query",
+            "description": "The user's allergies",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "restrictions",
+            "in": "query",
+            "description": "The user's dietary restrictions",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "The user's workout level",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "goal",
+            "in": "query",
+            "description": "The user's fitness goal",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully edited profile details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "user-user"
+        ],
+        "summary": "Add details to user's profile",
+        "description": "<ΛΑ-10>\n  Ο χρήστης πρέπει να μπορεί να προσθέτει προσωπικές πληροφορίες στο προφίλ του \n",
+        "operationId": "addUserDetails",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "The user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "The user's username",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "birthday",
+            "in": "query",
+            "description": "The user's birthday",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "description": "The user's gender",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "height",
+            "in": "query",
+            "description": "The user's height",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "weight",
+            "in": "query",
+            "description": "The user's weight",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "meal",
+            "in": "query",
+            "description": "The user's meal preferences",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "allergies",
+            "in": "query",
+            "description": "The user's allergies",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "restrictions",
+            "in": "query",
+            "description": "The user's dietary restrictions",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "The user's workout level",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "goal",
+            "in": "query",
+            "description": "The user's fitness goal",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully added profile details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/user/{userID}/recipe": {
+      "get": {
+        "tags": [
+          "recipe-user"
+        ],
+        "summary": "Get the list of all the Recipies",
+        "description": "<ΛΑ-1>\n  O χρήστης πρέπει να μπορεί να αναζητά συνταγές και προγράμματα γυμναστικής\n",
+        "operationId": "getAllRecipies",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "the user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllRecipe"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        }
+      }
+    },
+    "/user/{userID}/gymprogram": {
+      "get": {
+        "tags": [
+          "gymprogram-user"
+        ],
+        "summary": "Get a customized gym program",
+        "description": "<ΛΑ-2>\n  Ο χρήστης πρέπει να μπορεί να λαμβάνει προγράμματα γυμναστικής και πρόγραμμα διατροφής βασισμένα σε προσωπικές πληροφορίες.\n",
+        "operationId": "getGymProgram",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "the user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GymProgram"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "report-user"
+        ],
+        "summary": "Create a report to this gymprogram",
+        "description": "<ΛΑ-6> Ο χρήστης θα πρέπει να μπορεί να κάνει αναφορά σε προγράμματα γυμναστικής για τυχόν λάθη ή δυσαρέσκεια.\n",
+        "operationId": "createGymReport",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "the User's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation successful"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program not found"
+          }
+        }
+      }
+    },
+    "/user/{userID}/recipe/{recipeID}": {
+      "get": {
+        "tags": [
+          "recipe-user"
+        ],
+        "summary": "Get a specific recipe's details",
+        "description": "<ΛΑ-3>\n  O χρήστης πρέπει να μπορεί να δει τις θρεπτικές λεπτομέρειες για κάθε συνταγή\n",
+        "operationId": "getRecipe",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "the user's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeID",
+            "in": "path",
+            "description": "The ID of the recipe",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully received recipe's details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "report-user"
+        ],
+        "summary": "Create a report to this recipe",
+        "description": "<ΛΑ-5> Ο χρήστης θα πρέπει να μπορεί να κάνει αναφορά σε συνταγές για τυχόν λάθη\n",
+        "operationId": "createDietReport",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "the User's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeID",
+            "in": "path",
+            "description": "the recipe's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation successful"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        }
+      }
+    },
+    "/trainer/{trainerID}/report": {
+      "get": {
+        "tags": [
+          "report-trainer"
+        ],
+        "summary": "Get gym program reports",
+        "description": "<ΛΑ-7>\n  Ο γυμναστής θα πρέπει να έχει την δυνατότητα να βλέπει και να διορθώνει τα προγράμματα γυμναστικής από τυχόν λάθη\n",
+        "operationId": "getGymProgramReports",
+        "parameters": [
+          {
+            "name": "trainerID",
+            "in": "path",
+            "description": "The trainer Id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllReport"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program Reports not found"
+          }
+        }
+      }
+    },
+    "/trainer/{trainerID}/report/{reportID}": {
+      "get": {
+        "tags": [
+          "report-trainer"
+        ],
+        "summary": "Get gym program report",
+        "description": "<ΛΑ-7>\n  Ο γυμναστής θα πρέπει να έχει την δυνατότητα να βλέπει και να διορθώνει τα προγράμματα γυμναστικής από τυχόν λάθη\n",
+        "operationId": "getGymProgramReport",
+        "parameters": [
+          {
+            "name": "trainerID",
+            "in": "path",
+            "description": "The trainer ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "reportID",
+            "in": "path",
+            "description": "The report ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Report"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program Report not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "report-trainer"
+        ],
+        "summary": "Update/Correct fitness program report",
+        "description": "<ΛΑ-7>\n  Ο γυμναστής θα πρέπει να έχει την δυνατότητα να βλέπει και να διορθώνει τα προγράμματα γυμναστικής από τυχόν λάθη\n",
+        "operationId": "updateReport",
+        "parameters": [
+          {
+            "name": "trainerID",
+            "in": "path",
+            "description": "The trainer",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "reportID",
+            "in": "path",
+            "description": "The report ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "GymProgramDetails",
+            "in": "query",
+            "description": "The Gym Program Details",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Gym Program Report is updated"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program Report not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "report-trainer"
+        ],
+        "summary": "Get gym program reports",
+        "description": "<ΛΑ-7>\n  Ο γυμναστής θα πρέπει να έχει την δυνατότητα να βλέπει και να διορθώνει τα προγράμματα γυμναστικής από τυχόν λάθη\n",
+        "operationId": "deleteReport",
+        "parameters": [
+          {
+            "name": "trainerID",
+            "in": "path",
+            "description": "The trainer ID that deletes the gym program",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "reportID",
+            "in": "path",
+            "description": "The ID of the report that is being deleted.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Gym Program Report is deleted"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Gym Program Report not found"
+          }
+        }
+      }
+    },
+    "/nutritionist/{NutritionistID}/recipe": {
+      "post": {
+        "tags": [
+          "recipe-nutritionist"
+        ],
+        "summary": "Add a new recipe",
+        "description": "<ΛΑ-8>\n  Ο διατροφολόγος πρέπει να μπορεί να διαχειρίζεται τις συνταγές.\n",
+        "operationId": "addRecipe",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist's ID",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeType",
+            "in": "query",
+            "description": "The recipe type",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "imgRecipe",
+            "in": "query",
+            "description": "The image of the recipe",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Instructions",
+            "in": "query",
+            "description": "The instructions of the recipe",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "IngredientsName",
+            "in": "query",
+            "description": "The ingredients name of the recipe.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "NutritionalTable",
+            "in": "query",
+            "description": "The NutritionalTable of the recipe.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "IngredientsQuantity",
+            "in": "query",
+            "description": "The IngredientsQuantity of the recipe.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "time",
+            "in": "query",
+            "description": "The time that will be needed for the recipe to  be completed.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "difficulty",
+            "in": "query",
+            "description": "The difficulty of the recipe.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "servings",
+            "in": "query",
+            "description": "The servings that the recipe can produce.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recipe succesfully added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipes not found"
+          }
+        }
+      }
+    },
+    "/nutritionist/{NutritionistID}/recipe/{recipeID}": {
+      "get": {
+        "tags": [
+          "recipe-nutritionist"
+        ],
+        "summary": "Get recipe",
+        "description": "<ΛΑ-8>\n  Ο διατροφολόγος πρέπει να μπορεί να διαχειρίζεται τις συνταγές.\n",
+        "operationId": "getRecipeNutrionist",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that see the recipe.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeID",
+            "in": "path",
+            "description": "The ID of the recipe .",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "recipe-nutritionist"
+        ],
+        "summary": "Update/Correct recipe",
+        "description": "<ΛΑ-8>\n  Ο διατροφολόγος πρέπει να μπορεί να διαχειρίζεται τις συνταγές.\n",
+        "operationId": "updateRecipeNutritionist",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that update the recipe report",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeID",
+            "in": "path",
+            "description": "The ID of the recipe that is being updated.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeType",
+            "in": "query",
+            "description": "The recipe type",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "imgRecipe",
+            "in": "query",
+            "description": "The image of the recipe",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Instructions",
+            "in": "query",
+            "description": "The instructions of the recipe",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "IngredientsName",
+            "in": "query",
+            "description": "The ingredients Name of the recipe.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "NutritionalTable",
+            "in": "query",
+            "description": "The NutritionalTable of the recipe.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "IngredientsQuantity",
+            "in": "query",
+            "description": "The IngredientsQuantity of the recipe.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "time",
+            "in": "query",
+            "description": "The time that will be needed for the recipe to  be completed.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "difficulty",
+            "in": "query",
+            "description": "The difficulty of the recipe.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "servings",
+            "in": "query",
+            "description": "The servings that the recipe can produce.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Recipe is updated"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "recipe-nutritionist"
+        ],
+        "summary": "Delete recipe",
+        "description": "<ΛΑ-9>\n  Ο διατροφολόγος πρέπει να μπορεί να βλέπει τις αναφορές που γίνονται από τους χρήστες στις συνταγές.\n",
+        "operationId": "deleteRecipe",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that delete the recipe",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "recipeID",
+            "in": "path",
+            "description": "The ID of the recipe that is being deleted.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Recipe is deleted"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        }
+      }
+    },
+    "/nutritionist/{NutritionistID}/report": {
+      "get": {
+        "tags": [
+          "report-nutritionist"
+        ],
+        "summary": "Get recipe reports",
+        "description": "<ΛΑ-9>\n  Ο διατροφολόγος πρέπει να μπορεί να βλέπει τις αναφορές που γίνονται από τους χρήστες στις συνταγές.\n",
+        "operationId": "getRecipeReports",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that see the recipe reports",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllReport"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Reports not found"
+          }
+        }
+      }
+    },
+    "/nutritionist/{NutritionistID}/report/{reportID}": {
+      "get": {
+        "tags": [
+          "report-nutritionist"
+        ],
+        "summary": "Get recipe report",
+        "description": "<ΛΑ-9>\n  Ο διατροφολόγος πρέπει να μπορεί να βλέπει τις αναφορές που γίνονται από τους χρήστες στις συνταγές.\n",
+        "operationId": "getRecipeReport",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that see the recipe report",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "reportID",
+            "in": "path",
+            "description": "The ID of the recipe report.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Report"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Report not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "report-nutritionist"
+        ],
+        "summary": "Update/Correct recipe report",
+        "description": "<ΛΑ-9>\n  Ο διατροφολόγος πρέπει να μπορεί να βλέπει τις αναφορές που γίνονται από τους χρήστες στις συνταγές.\n",
+        "operationId": "updateRecipeReport",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that update the recipe report",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "reportID",
+            "in": "path",
+            "description": "The ID of the recipe report that is being updated.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "dayDietProgramIDs",
+            "in": "query",
+            "description": "The Diet Program Details",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Recipe Report is updated"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe Report not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "report-nutritionist"
+        ],
+        "summary": "delete recipe report",
+        "description": "<ΛΑ-9>\n  Ο διατροφολόγος πρέπει να μπορεί να βλέπει τις αναφορές που γίνονται από τους χρήστες στις συνταγές.\n",
+        "operationId": "deleteRecipeReport",
+        "parameters": [
+          {
+            "name": "NutritionistID",
+            "in": "path",
+            "description": "The nutritionist ID that delete the recipe report",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "reportID",
+            "in": "path",
+            "description": "The ID of the recipe report that is being deleted.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Recipe Report is deleted"
+          },
+          "400": {
+            "description": "Bad input parameter"
+          },
+          "404": {
+            "description": "Recipe Report not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "integer"
+          },
+          "username": {
+            "type": "string"
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "height": {
+            "type": "number"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "meal": {
+            "type": "string"
+          },
+          "allergies": {
+            "type": "string"
+          },
+          "restrictions": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "goal": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      },
+      "Recipe": {
+        "type": "object",
+        "properties": {
+          "recipeID": {
+            "type": "integer"
+          },
+          "recipeType": {
+            "type": "string"
+          },
+          "imgRecipe": {
+            "type": "string"
+          },
+          "Instructions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "IngredientsName": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "NutritionalTable": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "IngredientsQuantity": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "time": {
+            "type": "integer"
+          },
+          "difficulty": {
+            "type": "string"
+          },
+          "servings": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "Recipe"
+        }
+      },
+      "AllRecipe": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Recipe"
+        }
+      },
+      "Report": {
+        "type": "object",
+        "properties": {
+          "isGym-Diet": {
+            "type": "boolean"
+          },
+          "ID": {
+            "type": "integer"
+          },
+          "ByUser": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "Recipe"
+        }
+      },
+      "GymProgram": {
+        "type": "object",
+        "properties": {
+          "GymProgramDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exercise"
+            }
+          },
+          "gymProgramID": {
+            "type": "integer"
+          }
+        },
+        "xml": {
+          "name": "GymProgram"
+        }
+      },
+      "AllReport": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Report"
+        }
+      },
+      "Exercise": {
+        "type": "object",
+        "properties": {
+          "exerciseID": {
+            "type": "integer"
+          },
+          "exerciseTitle": {
+            "type": "string"
+          },
+          "exerciseDescription": {
+            "type": "string"
+          },
+          "explanationVideo": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "Exercise"
+        }
+      },
+      "DietProgram": {
+        "type": "object",
+        "properties": {
+          "dayDietProgramIDs": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "recipeIDs": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "dietProgramID": {
+            "type": "integer"
+          }
+        },
+        "xml": {
+          "name": "DietProgram"
+        }
+      }
+    },
+    "requestBodies": {
+      "User": {
+        "description": "User model",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "required": true
+      }
+    }
+  }
+}
