@@ -19,9 +19,8 @@ GymFuelX, a pioneer in the realm of fitness technology, is a pivotal application
   - [Part 1a: User Requirements and System Specifications](#part-1-user-requirements-and-system-specifications)
   - [Part 1b: Prototype of the Application](https://chryskoum.github.io/Software-Engineering-I-Project)
   - [Part 2: Software Specifications and System Implementation](#part-2-software-specifications-and-system-implementation)
-- [Repository](#repository)
+- [Preview of Software Engineering II](#preview-of-software-engineering-ii-advanced-development-techniques)
 - [Team](#team)
-- [Author](#author)
 
 ## Overview
 
@@ -75,16 +74,6 @@ This section delves into the technical intricacies of the GymFuelX application. 
 - **System Architecture:** Highlights the architectural framework of GymFuelX. It breaks down the system's resources and offers detailed documentation on the REST interfaces, ensuring seamless integration of various components.
 - **System Implementation with Node-RED:** This segment outlines how the system was implemented using Node-RED. It maps out the REST services to Node-RED flows and delves into the implementation of various user stories, ensuring the system adheres to the user's requirements.
 
-## Repository
-
-The entire codebase, along with associated files, is available at the [GymFuelX Repository](https://chryskoum.github.io/Software-Engineering-I-Project/).
-
-## Team
- - Chrysostomos Koumides - [Personal Website](https://github.com/ChrysKoum/ChrysK)
- - Dimos Kompitselidis - [Personal Website](https://komisd.github.io/Portfolio-Website/)
- - Antreas Eustathios Eleyferiadis
- - Antreas Theodorou 
-
 ## Preview of Software Engineering II: Advanced Development Techniques
 
 **Course Overview:**
@@ -100,3 +89,9 @@ Software Engineering II is builds upon the foundational knowledge acquired in So
 
 **Link of SE II**
 [SE II Repository Project Link](https://github.com/ChrysKoum/SE2-Project-GymFuelX)
+
+## Team
+ - Chrysostomos Koumides - [Personal Website](https://github.com/ChrysKoum/ChrysK)
+ - Dimos Kompitselidis - [Personal Website](https://komisd.github.io/Portfolio-Website/)
+ - Antreas Eustathios Eleyferiadis
+ - Antreas Theodorou 
