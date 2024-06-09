@@ -8,7 +8,7 @@
 
 ### A Comprehensive Fitness & Nutrition Management System
 
-### Project Website: [GymFuelX Project](https://chryskoum.github.io/Software-Engineering-I-Project/)
+
 
 GymFuelX, a pioneer in the realm of fitness technology, is a pivotal application catering to fitness enthusiasts globally. With an emphasis on health and innovation, GymFuelX aims to transform the gym-food sector, offering a unique blend of tailored fitness and nutrition plans.
 
