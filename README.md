@@ -19,7 +19,7 @@ GymFuelX, a pioneer in the realm of fitness technology, is a pivotal application
   - [Part 1a: User Requirements and System Specifications](#part-1-user-requirements-and-system-specifications)
   - [Part 1b: Prototype of the Application](https://chryskoum.github.io/Software-Engineering-I-Project)
   - [Part 2: Software Specifications and System Implementation](#part-2-software-specifications-and-system-implementation)
-- [Preview of Software Engineering II](#preview-of-software-engineering-ii-advanced-development-techniques)
+- [Preview of Software Engineering II](#preview-of-software-engineering-ii)
 - [Team](#team)
 
 ## Overview
@@ -74,7 +74,7 @@ This section delves into the technical intricacies of the GymFuelX application. 
 - **System Architecture:** Highlights the architectural framework of GymFuelX. It breaks down the system's resources and offers detailed documentation on the REST interfaces, ensuring seamless integration of various components.
 - **System Implementation with Node-RED:** This segment outlines how the system was implemented using Node-RED. It maps out the REST services to Node-RED flows and delves into the implementation of various user stories, ensuring the system adheres to the user's requirements.
 
-## Preview of Software Engineering II: Advanced Development Techniques
+## Preview of Software Engineering II:
 
 **Course Overview:**
 Software Engineering II is builds upon the foundational knowledge acquired in Software Engineering I. We learned advanced techniques and methodologies related to the development, testing, operation, and management of software projects.
