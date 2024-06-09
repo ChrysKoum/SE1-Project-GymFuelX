@@ -1,4 +1,4 @@
-# Software-Engineering-I-Project in Auth | GymFuelX Application Documentation
+# Software-Engineering-I-Project in AUTH | GymFuelX Application Documentation
 
 ## School of Electrical & Computer Engineering - University of Thessaloniki
 
@@ -8,7 +8,7 @@
 
 ### A Comprehensive Fitness & Nutrition Management System
 
-### Project Website: https://chryskoum.github.io/Software-Engineering-I-Project/
+### Project Website: [GymFuelX Project](https://chryskoum.github.io/Software-Engineering-I-Project/)
 
 GymFuelX, a pioneer in the realm of fitness technology, is a pivotal application catering to fitness enthusiasts globally. With an emphasis on health and innovation, GymFuelX aims to transform the gym-food sector, offering a unique blend of tailored fitness and nutrition plans.
 
@@ -16,10 +16,11 @@ GymFuelX, a pioneer in the realm of fitness technology, is a pivotal application
 
 - [Overview](#overview)
   - [Introduction](#introduction)
-  - [Part 1: User Requirements and System Specifications](#part-1-user-requirements-and-system-specifications)
-  - [Part 1: Prototype of the Application](https://chryskoum.github.io/Software-Engineering-I-Project)
+  - [Part 1a: User Requirements and System Specifications](#part-1-user-requirements-and-system-specifications)
+  - [Part 1b: Prototype of the Application](https://chryskoum.github.io/Software-Engineering-I-Project)
   - [Part 2: Software Specifications and System Implementation](#part-2-software-specifications-and-system-implementation)
 - [Repository](#repository)
+- [Team](#team)
 - [Author](#author)
 
 ## Overview
@@ -35,12 +36,12 @@ GymFuelX stands at the forefront of fitness applications, offering an innovative
 The User Requirements and System Specifications provide a solid foundation for the GymFuelX application's development. This section offers an in-depth understanding of the users' needs and the system's expectations.
 
 - **System Requirements:** A high-level overview focusing on the essential needs of the application.
-- **Functional Requirements:** An exploration into the application's features and capabilities, such as profile management or tailored fitness programs.
-- **Users and External Systems:** Identification of various user types and their interactions with the application. It also highlights the role of external systems, such as databases.
+- **Functional Requirements:** An exploration into the application's features and capabilities, such as profile management and tailored fitness programs.
+- **Users and External Systems:** Identification of various user types and their interactions with the application, highlighting the role of external systems such as databases.
 - **Non-Functional Requirements:** Emphasizing performance, scalability, and reliability, this section ensures the system's efficiency.
-- **Usage Scenarios:** Provides real-world scenarios, detailing how users interact with the application.
+- **Usage Scenarios:** Real-world scenarios detailing how users interact with the application.
 - **Graphical Interface Windows:** Focuses on the visual design and layout of different screens, enhancing user experience.
-- **Take a look the Prototype on the link** https://chryskoum.github.io/Software-Engineering-I-Project/
+- **Prototype:** [Take a look at the Prototype](https://chryskoum.github.io/Software-Engineering-I-Project/)
 - **Static Modeling:** Offers a conceptual representation of the application's data structure.
 
 ### Part 2: Software Specifications and System Implementation
@@ -57,10 +58,10 @@ The User Requirements and System Specifications provide a solid foundation for t
     - Recipe Resource
     - Resource Report
     - GymProgram Resource
-    - Exercise resource
+    - Exercise Resource
     - DietProgram Resource
 - System Implementation with Node-RED
-  - Mapping REST Services to NodeRed Flows
+  - Mapping REST Services to Node-RED Flows
   - Implementation of User Stories
 - NodeRED_flows_GymFuelX.zip: Contains the Node-RED flows to orchestrate the various microservices and components.
 - Team27-2.0.0.json: Configuration and setup details ensuring consistent development environments for the team.
@@ -72,14 +73,30 @@ This section delves into the technical intricacies of the GymFuelX application. 
 
 - **Design Standards:** This section describes the key design standards adopted in the development process. The observer template and standard strategy are elucidated, showcasing the underlying design principles.
 - **System Architecture:** Highlights the architectural framework of GymFuelX. It breaks down the system's resources and offers detailed documentation on the REST interfaces, ensuring seamless integration of various components.
-
-- **System Implementation with Node-RED:** This segment outlines how the system was implemented using Node-RED. It maps out the REST services to NodeRed flows and delves into the implementation of various user stories, ensuring the system adheres to the user's requirements.
+- **System Implementation with Node-RED:** This segment outlines how the system was implemented using Node-RED. It maps out the REST services to Node-RED flows and delves into the implementation of various user stories, ensuring the system adheres to the user's requirements.
 
 ## Repository
 
 The entire codebase, along with associated files, is available at the [GymFuelX Repository](https://chryskoum.github.io/Software-Engineering-I-Project/).
 
-## Author
+## Team
+ - Chrysostomos Koumides - [Personal Website](https://github.com/ChrysKoum/ChrysK)
+ - Dimos Kompitselidis - [Personal Website](https://komisd.github.io/Portfolio-Website/)
+ - Antreas Eustathios Eleyferiadis
+ - Antreas Theodorou 
 
-- Project Website - [GymFuelX Project](https://chryskoum.github.io/Software-Engineering-I-Project/)
-- Personal Website - [Chrysostomos Koumides](https://chryskoum.github.io/)
+## Preview of Software Engineering II: Advanced Development Techniques
+
+**Course Overview:**
+Software Engineering II is builds upon the foundational knowledge acquired in Software Engineering I. We learned advanced techniques and methodologies related to the development, testing, operation, and management of software projects.
+
+**Project Development:**
+
+- Implementing advanced user authentication and security measures.
+- Enhancing the CI/CD pipeline for more efficient development cycles.
+- Conducting thorough quality assurance testing to identify and fix bugs.
+- Integrating new features based on user feedback and market trends.
+- Ensuring the application scales effectively to meet increasing user demands.
+
+**Link of SE II**
+[SE II Repository Project Link](https://github.com/ChrysKoum/SE2-Project-GymFuelX)
