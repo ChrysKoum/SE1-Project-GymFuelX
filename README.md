@@ -40,7 +40,7 @@ The User Requirements and System Specifications provide a solid foundation for t
 - **Non-Functional Requirements:** Emphasizing performance, scalability, and reliability, this section ensures the system's efficiency.
 - **Usage Scenarios:** Real-world scenarios detailing how users interact with the application.
 - **Graphical Interface Windows:** Focuses on the visual design and layout of different screens, enhancing user experience.
-- **Prototype:** [Take a look at the Prototype](https://chryskoum.github.io/Software-Engineering-I-Project/)
+- **Prototype:** [Take a look at the Prototype](https://chryskoum.github.io/SE1-Project-GymFuelX/)
 - **Static Modeling:** Offers a conceptual representation of the application's data structure.
 
 ### Part 2: Software Specifications and System Implementation
